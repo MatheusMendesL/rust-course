@@ -7,6 +7,8 @@ fn main() {
    println!("Now I plan to do {} reps", gym_reps);
 
    println!("{}", calc(5, 5));
+
+   
 }
 
 fn calc(a:i32, b:i32) -> i32 {
