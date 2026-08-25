@@ -1,0 +1,1 @@
+C:\Users\Matheus\OneDrive\Desktop\Programação\rust\005_type_aliases\type_aliases\target\debug\type_aliases.exe: C:\Users\Matheus\OneDrive\Desktop\Programação\rust\005_type_aliases\type_aliases\src\main.rs
