@@ -1,5 +1,5 @@
 fn main() {
-    let apples = "apples";
+    let apples: &str = "apples";
     print_my_value(apples);
     println!("{apples}");
 
