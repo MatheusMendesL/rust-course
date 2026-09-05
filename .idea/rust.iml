@@ -6,10 +6,12 @@
       <sourceFolder url="file://$MODULE_DIR$/024_arrays_ownerships/arrays_ownerships/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/024_arrays_ownerships/teste/teste/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/025_structs/structs/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/026_structs_functions/structs/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/023_mutable_references/references/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/arrays_ownerships/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/teste/teste/target" />
       <excludeFolder url="file://$MODULE_DIR$/025_structs/structs/target" />
+      <excludeFolder url="file://$MODULE_DIR$/026_structs_functions/structs/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
