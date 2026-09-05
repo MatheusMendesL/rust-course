@@ -3,7 +3,13 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/023_mutable_references/references/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/024_arrays_ownerships/arrays_ownerships/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/024_arrays_ownerships/teste/teste/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/025_structs/structs/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/023_mutable_references/references/target" />
+      <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/arrays_ownerships/target" />
+      <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/teste/teste/target" />
+      <excludeFolder url="file://$MODULE_DIR$/025_structs/structs/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

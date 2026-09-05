@@ -1,0 +1,1 @@
+C:\Users\Matheus\OneDrive\Desktop\Programação\rust\024_arrays_ownerships\arrays_ownerships\target\debug\arrays_ownerships.exe: C:\Users\Matheus\OneDrive\Desktop\Programação\rust\024_arrays_ownerships\arrays_ownerships\src\main.rs
