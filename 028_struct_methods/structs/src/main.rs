@@ -5,6 +5,16 @@ struct Calculate {
 }
 
 impl Calculate {
+    fn new(a: i32, b: i32) -> Self {
+        Self {
+            a,
+            b
+        }
+    }
+}
+
+
+impl Calculate {
     fn add(&self) -> i32 {
         self.a + self.b
     }
@@ -32,13 +42,15 @@ impl Calculate {
 }
 
 fn main() {
-    let numbers = Calculate { a: 10, b: 10 };
-    let methods = [numbers.add(),numbers.sub(), numbers.mul(), numbers.div()];
+    let numbers = Calculate::new(2, 3);
+    let methods = [numbers.add(), numbers.sub(), numbers.mul(), numbers.div()];
     let methods_string = ["add", "sub", "mul", "div"];
 
     for i in 0..methods.len() {
-        println!("Metodo executado foi: {} e o resultado é: {}", methods_string[i], methods[i]);
-
+        println!(
+            "Metodo executado foi: {} e o resultado é: {}",
+            methods_string[i], methods[i]
+        );
     }
 
     let numbers2 = Calculate { a: 10, b: 15 };
@@ -48,5 +60,4 @@ fn main() {
     } else {
         println!("{} is greater than {}", numbers2.b, numbers.b);
     }
-
 }
