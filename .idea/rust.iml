@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/027_structs_muts/structs/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/028_struct_methods/structs/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/029_design_pattern/design_pattern/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/030_tuple_struct/tuple_struct/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/023_mutable_references/references/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/arrays_ownerships/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/teste/teste/target" />
@@ -18,6 +19,7 @@
       <excludeFolder url="file://$MODULE_DIR$/027_structs_muts/structs/target" />
       <excludeFolder url="file://$MODULE_DIR$/028_struct_methods/structs/target" />
       <excludeFolder url="file://$MODULE_DIR$/029_design_pattern/design_pattern/target" />
+      <excludeFolder url="file://$MODULE_DIR$/030_tuple_struct/tuple_struct/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

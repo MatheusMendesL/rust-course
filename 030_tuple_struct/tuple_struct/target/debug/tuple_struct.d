@@ -1,0 +1,1 @@
+C:\Users\Matheus\OneDrive\Desktop\Programação\rust\030_tuple_struct\tuple_struct\target\debug\tuple_struct.exe: C:\Users\Matheus\OneDrive\Desktop\Programação\rust\030_tuple_struct\tuple_struct\src\main.rs
