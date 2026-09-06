@@ -1,0 +1,1 @@
+C:\Users\Matheus\OneDrive\Desktop\Programação\rust\029_design_pattern\design_pattern\target\debug\design_pattern.exe: C:\Users\Matheus\OneDrive\Desktop\Programação\rust\029_design_pattern\design_pattern\src\main.rs
