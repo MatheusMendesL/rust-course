@@ -1,8 +1,11 @@
+type NumberCard = String;
+type Mail = String;
+type Pass = String;
 #[derive(Debug)]
 enum PaymentMethodType {
-    Credit(String),
-    Debit(String),
-    Pix(String, String),
+    Credit(NumberCard),
+    Debit(NumberCard),
+    Pix(Mail, Pass),
 }
 
 fn main() {
