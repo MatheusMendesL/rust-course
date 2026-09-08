@@ -12,6 +12,8 @@
       <sourceFolder url="file://$MODULE_DIR$/029_design_pattern/design_pattern/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/030_tuple_struct/tuple_struct/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/031_project/project/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/032_enums/enums/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/033_associated_types/enums/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/023_mutable_references/references/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/arrays_ownerships/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/teste/teste/target" />
@@ -22,6 +24,8 @@
       <excludeFolder url="file://$MODULE_DIR$/029_design_pattern/design_pattern/target" />
       <excludeFolder url="file://$MODULE_DIR$/030_tuple_struct/tuple_struct/target" />
       <excludeFolder url="file://$MODULE_DIR$/031_project/project/target" />
+      <excludeFolder url="file://$MODULE_DIR$/032_enums/enums/target" />
+      <excludeFolder url="file://$MODULE_DIR$/033_associated_types/enums/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
