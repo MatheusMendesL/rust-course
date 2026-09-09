@@ -23,6 +23,7 @@
       <sourceFolder url="file://$MODULE_DIR$/040_multiple_generics/generics/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/041_generics_structs/generics/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/042_generics_enums/generics/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/043_project/project/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/023_mutable_references/references/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/arrays_ownerships/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/teste/teste/target" />
@@ -44,6 +45,7 @@
       <excludeFolder url="file://$MODULE_DIR$/040_multiple_generics/generics/target" />
       <excludeFolder url="file://$MODULE_DIR$/041_generics_structs/generics/target" />
       <excludeFolder url="file://$MODULE_DIR$/042_generics_enums/generics/target" />
+      <excludeFolder url="file://$MODULE_DIR$/043_project/project/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
