@@ -1,0 +1,1 @@
+C:\Users\Matheus\OneDrive\Desktop\Programação\rust\041_generics_structs\generics\target\debug\generics.exe: C:\Users\Matheus\OneDrive\Desktop\Programação\rust\041_generics_structs\generics\src\main.rs
