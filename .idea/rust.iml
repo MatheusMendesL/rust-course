@@ -17,6 +17,8 @@
       <sourceFolder url="file://$MODULE_DIR$/034_enums_em_enums/enums/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/035_matches/matches/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/036_matches/matches/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/037_if_let/enums/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/038_project/project/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/023_mutable_references/references/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/arrays_ownerships/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/teste/teste/target" />
@@ -32,6 +34,8 @@
       <excludeFolder url="file://$MODULE_DIR$/034_enums_em_enums/enums/target" />
       <excludeFolder url="file://$MODULE_DIR$/035_matches/matches/target" />
       <excludeFolder url="file://$MODULE_DIR$/036_matches/matches/target" />
+      <excludeFolder url="file://$MODULE_DIR$/037_if_let/enums/target" />
+      <excludeFolder url="file://$MODULE_DIR$/038_project/project/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
