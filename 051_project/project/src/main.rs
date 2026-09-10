@@ -1,16 +1,30 @@
 #[derive(Debug)]
+#[allow(dead_code)]
 struct Food {
-    name: String
+    name: String,
+    price: f64,
+    is_on_stock: bool
 }
 
 impl Food {
-    fn new(name: String) -> Self {
+    fn new(name: String, price: f64, is_on_stock: bool) -> Self {
         Self {
-            name
+            name,
+            price,
+            is_on_stock
+        }
+    }
+
+    fn verify_stock(self) -> Option<Self> {
+        if self.is_on_stock {
+            return Some(self)
+        } else {
+            return None;
         }
     }
 }
 
+#[derive(Debug)]
 struct Restaurant {
     reservations: u32,
     has_mice_infestation: bool
@@ -24,23 +38,23 @@ impl Restaurant {
         }
     }
 
-    fn chef_special(&self, food: String) -> Option<Food> {
+    fn chef_special(&self) -> Option<Food> {
         match self.has_mice_infestation {
             true => {
                 None
             }
 
             false => {
-                Some(Food::new(food))
+                self.reservations_quantity().and_then(|food| food.verify_stock())
             }
         }
     }
 
     fn reservations_quantity(&self) -> Option<Food> {
         if self.reservations >= 12 {
-            Some(Food::new(String::from("Strip Steak")))
+            Some(Food::new(String::from("Strip Steak"), 90.00, true))
         } else {
-            Some(Food::new(String::from("Uni Sashimi")))
+            Some(Food::new(String::from("Uni Sashimi"), 32.50, true))
         }
     }
 
@@ -55,7 +69,7 @@ impl Restaurant {
                 if address.is_empty(){
                     Err(String::from("No delivery address specified"))
                 } else {
-                    Ok(Food::new(String::from("Burger")))
+                    Ok(Food::new(String::from("Burger"), 40.99, true))
                 }
             }
         }
@@ -63,30 +77,13 @@ impl Restaurant {
 }
 
 fn main() {
-    /* In the `main` function, create a `Restaurant` instance
-with 11 reservations and a mice infestation.
- 
-Invoke the `chef_special` method and print out its return
-value. It should be the None variant.
- 
-Invoke the `deliver_burger` method with an argument of "123
-Elm Street" and print out its return value. It should be
-the Err variant.
- 
-Create another `Restaurant` instance with 15 reservations
-and no mice infestation.
- 
-Invoke the `chef_special` method and print out its return
- value. It should be the Some variant with a "Strip Steak".
- 
-Invoke the `deliver_burger` method with an argument of an
-empty address. Print out its return value. It should be the
-Err variant.
- 
-Invoke the `deliver_burger` method again with an argument
-of a valid address. Print out its return value. It should
-be the Ok variant nesting a Food struct with a `name` of
-"Burger". */
-    // só precisa terminar o main do project
-    println!("Hello, world!");
+    let rest = Restaurant::new(11, true);
+    println!("{:#?}", rest.chef_special());
+    println!("{:#?}", rest.deliver_burger("123 Elm Street"));
+
+    let rest2 = Restaurant::new(15, false);
+    println!("{:#?}", rest2.chef_special());
+    println!("{:#?}", rest2.deliver_burger(""));
+    println!("{:#?}", rest2.deliver_burger("123 Elm Street"));
+
 }
