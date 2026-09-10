@@ -31,6 +31,16 @@ impl<T> MyOpt<T> {
         }
     }
 
+    fn unwrap_or_else<F>(self, f: F) -> T
+    where
+        F: FnOnce() -> T,
+    {
+        match self {
+            MyOpt::Some(value) => value,
+            MyOpt::None => f(),
+        }
+    }
+
     fn is_some(&self) -> bool {
         match self {
             MyOpt::Some(_) => {
@@ -53,18 +63,8 @@ impl<T> MyOpt<T> {
         }
     }
 
-    fn take(&mut self) -> (MyOpt<T>, T) {
-
-        let old_self = mem::replace(self, MyOpt::None);
-        match old_self {
-            MyOpt::Some(value) => {
-                (MyOpt::None, value)
-            }
-
-            MyOpt::None => {
-                panic!("Impossible to use None on this method")
-            }
-        }
+    fn take(&mut self) -> MyOpt<T> {
+        mem::replace(self, MyOpt::None)
     }
 
     fn expect(self, msg: &str) -> T {
@@ -75,6 +75,31 @@ impl<T> MyOpt<T> {
 
             MyOpt::None => {
                 panic!("{}", msg);
+            }
+        }
+    }
+    fn replace(&mut self, value: T) -> MyOpt<T> {
+        mem::replace(self, MyOpt::Some(value))
+    }
+
+    fn as_ref(&self) -> MyOpt<&T> {
+        match self {
+            MyOpt::Some(value) => {
+                MyOpt::Some(&value)
+            }
+            MyOpt::None => {
+                MyOpt::None
+            }
+        }
+    }
+
+    fn as_mut(&mut self) -> MyOpt<&mut T> {
+        match self {
+            MyOpt::Some(value) => {
+                MyOpt::Some(value)
+            }
+            MyOpt::None => {
+                MyOpt::None
             }
         }
     }
