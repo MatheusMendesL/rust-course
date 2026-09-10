@@ -28,6 +28,9 @@
       <sourceFolder url="file://$MODULE_DIR$/045_example_option/option/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/046_options_functions/options/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/047_option_scratch/option/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/048_result_enum/result/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/049_example_result/result/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/050_returning_result/result/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/023_mutable_references/references/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/arrays_ownerships/target" />
       <excludeFolder url="file://$MODULE_DIR$/024_arrays_ownerships/teste/teste/target" />
@@ -54,6 +57,9 @@
       <excludeFolder url="file://$MODULE_DIR$/045_example_option/option/target" />
       <excludeFolder url="file://$MODULE_DIR$/046_options_functions/options/target" />
       <excludeFolder url="file://$MODULE_DIR$/047_option_scratch/option/target" />
+      <excludeFolder url="file://$MODULE_DIR$/048_result_enum/result/target" />
+      <excludeFolder url="file://$MODULE_DIR$/049_example_result/result/target" />
+      <excludeFolder url="file://$MODULE_DIR$/050_returning_result/result/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
