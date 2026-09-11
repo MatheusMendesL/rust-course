@@ -7,9 +7,9 @@ enum MyOpt<T> {
 }
 
 #[derive(Debug, Clone, Copy)]
-enum MyResult<T> {
+enum MyResult<T, E> {
     Ok(T),
-    Err(T)
+    Err(E)
 }
 
 #[allow(dead_code)]
@@ -115,26 +115,20 @@ impl<T> MyOpt<T> {
 
 
 #[allow(dead_code)]
-impl<T> MyResult<T> {
+impl<T, E> MyResult<T, E> {
     fn unwrap(self) -> T {
         match self {
-            MyResult::Ok(value) => {
-                value
-            }
-            MyResult::Err(value) => {
-                value
+            MyResult::Ok(value) => value,
+            MyResult::Err(_) => {
+                panic!("Result contains an error");
             }
         }
     }
 
     fn unwrap_or(self, fallback: T) -> T {
         match self {
-            MyResult::Ok(value) => {
-                value
-            }
-            MyResult::Err(_) => {
-                fallback
-            }
+            MyResult::Ok(value) => value,
+            MyResult::Err(_) => fallback,
         }
     }
 
@@ -143,105 +137,97 @@ impl<T> MyResult<T> {
         F: FnOnce() -> T,
     {
         match self {
-            MyResult::Ok(value) => {
-                value
-            }
-
-            MyResult::Err(_) => {
-                f()
-            }
+            MyResult::Ok(value) => value,
+            MyResult::Err(_) => f(),
         }
     }
 
     fn expect(self, msg: &str) -> T {
         match self {
-            MyResult::Ok(value) => {
-                value
-            }
-
+            MyResult::Ok(value) => value,
             MyResult::Err(_) => {
-                panic!("Erro: {}", msg)
+                panic!("{}", msg);
             }
+        }
+    }
+
+    fn unwrap_err(self) -> E {
+        match self {
+            MyResult::Ok(_) => {
+                panic!("Result contains a value");
+            }
+            MyResult::Err(error) => error,
+        }
+    }
+
+    fn expect_err(self, msg: &str) -> E {
+        match self {
+            MyResult::Ok(_) => {
+                panic!("{}", msg);
+            }
+            MyResult::Err(error) => error,
         }
     }
 
     fn is_ok(&self) -> bool {
         match self {
-            MyResult::Ok(_) => {
-                true
-            }
-            MyResult::Err(_) => {
-                false
-            }
+            MyResult::Ok(_) => true,
+            MyResult::Err(_) => false,
         }
     }
 
     fn is_err(&self) -> bool {
         match self {
-            MyResult::Ok(_) => {
-                false
-            }
-            MyResult::Err(_) => {
-                true
-            }
+            MyResult::Ok(_) => false,
+            MyResult::Err(_) => true,
         }
     }
 
-    fn ok(self) -> Option<T> {
+    fn ok(self) -> MyOpt<T> {
         match self {
-            MyResult::Ok(value) => Some(value),
-            MyResult::Err(_) => None,
+            MyResult::Ok(value) => MyOpt::Some(value),
+            MyResult::Err(_) => MyOpt::None,
         }
     }
 
-    fn err(self) -> Option<T> {
+    fn err(self) -> MyOpt<E> {
         match self {
-            MyResult::Ok(_) => None,
-            MyResult::Err(value) => Some(value),
+            MyResult::Ok(_) => MyOpt::None,
+            MyResult::Err(error) => MyOpt::Some(error),
         }
     }
 
-    fn replace_ok(&mut self, value: T) -> MyResult<T> {
+    fn replace_ok(&mut self, value: T) -> MyResult<T, E> {
         mem::replace(self, MyResult::Ok(value))
     }
 
-    fn replace_err(&mut self, value: T) -> MyResult<T> {
-        mem::replace(self, MyResult::Err(value))
+    fn replace_err(&mut self, error: E) -> MyResult<T, E> {
+        mem::replace(self, MyResult::Err(error))
     }
 
-    fn as_ref(&self) -> MyResult<&T>{
+    fn as_ref(&self) -> MyResult<&T, &E> {
         match self {
-            MyResult::Ok(value) => {
-                MyResult::Ok(&value)
-            }
-
-            MyResult::Err(value) => {
-                MyResult::Err(&value)
-            }
+            MyResult::Ok(value) => MyResult::Ok(value),
+            MyResult::Err(error) => MyResult::Err(error),
         }
     }
 
-    fn as_mut(&mut self) -> MyResult<&mut T> {
+    fn as_mut(&mut self) -> MyResult<&mut T, &mut E> {
         match self {
-            MyResult::Ok(value) => {
-                MyResult::Ok(value)
-            }
-
-            MyResult::Err(value) => {
-                MyResult::Err(value)
-            }
+            MyResult::Ok(value) => MyResult::Ok(value),
+            MyResult::Err(error) => MyResult::Err(error),
         }
     }
 }
 
 
-struct MyLib<T> {
+struct MyLib<T, E> {
     my_opt: MyOpt<T>,
-    my_result: MyResult<T>
+    my_result: MyResult<T, E>
 }
 
 #[allow(dead_code)]
-impl<T> MyLib<T> {
+impl<T, E> MyLib<T, E> {
     fn unwrap(MyLib { my_opt, my_result }: Self) -> (T, T) {
         (my_opt.unwrap(), my_result.unwrap())
     }
@@ -262,7 +248,7 @@ impl<T> MyLib<T> {
         }
     }
 
-    fn is_on_ok(MyLib { my_opt, my_result }: &Self) -> bool {
+    fn is_one_ok(MyLib { my_opt, my_result }: &Self) -> bool {
         if my_opt.is_some() || my_result.is_ok() {
             true
         } else {
